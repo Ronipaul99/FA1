@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="ISO-8859-1">
+	<meta name="application-name" content="Culinary Institute" />
+	<meta name="author" content="ETA UIM">
+	<meta name="keywords" content="Culinary Institute, classes, cooking classes, culinary classes ">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Gingerking houseboat</title>
+	<!-- ******************************************************** -->
+	<script src="js/Booking.js"></script>
+	<!-- ******************************************************** -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/styling.css">
+</head>
+
+<body>
+	<!-- Code the responsive navbar here -->
+	<nav class="navbar navbar-dark bg-dark">
+		<a class="navbar-brand" href="#">GingerKing HouseBoat</a>
+		<ul class="navbar-nav mr-auto">
+		  <li class="nav-item active">
+			<a class="nav-link text-secondary" href="./booking.html">Book House Boat</a>
+		  </li>
+		  </ul>
+	  </nav>
+	<br>
+		<div class="container">
+			<div class="row">
+				<!-- Code below to add necessary bootstrap classes to make the page responsive -->
+				<div class="col-lg-6 offset-lg-3 col-md-12 ">
+					<div class="card">
+						<div class="card-body">
+							<!-- Code the form here -->
+							<form onsubmit="book()">
+                               <div class="form-group">
+								   <label for="location"></label>Location</label>
+								   <select class="form-control"name="location" id="location" required>
+									   <option value="">--Where--</option>
+										   <option value="Allepey">Allepey</option>
+										   <option value="Kumarakom">Kumarakom</option>
+										   <option value="Tarkarli">Tarkarli</option>
+									</select>	   
+							   </div>
+							   <div class="form-group">
+								   <label for="dorn">Date Of Ride</label>
+									<input  class="form-control"type="date" name="dorn" id="dor" onchange="getBookings()" required/>
+									<small id="dateError" class="text-danger"></small>
+							   </div>
+							   <label for="veg">Food Type: </label>
+							   <div class="form-check form-check-inline">
+									<input  class="form-check-input"type="checkbox" name="vegn" id="veg" value="V"/>
+									<label class="form-check-label" for="vegn">veg:</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox" id="nonveg"name="nonvegn" value="NV">
+									<label class="form-check-label" for="nonvegn" >Non-Veg</label>
+								  </div>
+								  <div class="form-group">
+									   <label for="nopn">Number Of People</label>
+									   <input class="form-control" type="number" name="nopn" id="nop" placeholder="Maximum 20 people"max="20" min="1" required/>
+								  </div>
+								  <div class="form-group">
+									<label for="cnn">Contact Number</label>
+									<input class="form-control" type="number" name="cnn" id="cn" placeholder="909090900" maxlength="10" required/>
+							   </div>
+							   <button class="btn btn-primary btn-block"type="submit" id="btn" disabled>Book</button>
+							   <small class="text-success" id="successMessage"></small>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div><br>
+		</div>
+</body>
+
+<!-- Do not remove the below lines of code -->
+<script src="./utilities/jquery.js"></script>
+<script src="./utilities/rv.js"></script>
+
+</html>
